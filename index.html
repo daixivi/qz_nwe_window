@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>前后端联调 Demo</title>
+</head>
+<body>
+  <h1>🎉 前后端联调测试页面</h1>
+  <button id="fetchBtn">点我获取后端数据</button>
+  <p id="result"></p >
+
+  <script>
+    // 获取按钮和显示结果的元素
+    const btn = document.getElementById('fetchBtn');
+    const result = document.getElementById('result');
+
+    // 给按钮绑定点击事件
+    btn.addEventListener('click', async () => {
+      try {
+        // 发送 GET 请求到后端接口
+        const response = await fetch('http://localhost:3000/hello');
+        const data = await response.text(); // 获取返回的文字
+        // 显示到页面上
+        result.textContent = '后端返回：' + data;
+      } catch (error) {
+        result.textContent = '请求出错：' + error.message;
+      }
+    });
+  </script>
+</body>
+</html>
