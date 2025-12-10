@@ -6,8 +6,8 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'localhost',           // 本地数据库
   user: 'root',                // MySQL 用户名（通常是 root）
-  password: '123456',        // ✅ 替换成你自己的 MySQL 密码，比如 '123456'
-  database: 'qz_lj_mysql'      // ✅ 你创建的数据库名
+  password: 'zzh20030716',        // ✅ 替换成你自己的 MySQL 密码，比如 '123456'
+  database: 'qz_lx'      // ✅ 你创建的数据库名
 });
 
 // 测试连接

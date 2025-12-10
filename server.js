@@ -36,18 +36,18 @@ app.get('/health', (req, res) => {
 });
 
 // 提供一个接口，获取 person 表中的所有数据
-app.get('/persons', (req, res) => {
-  const sql = 'SELECT * FROM person'; // 查询 person 表
-  db.query(sql, (err, results) => {
-    if (err) {
-      console.error('❌ 查询失败:', err);
-      res.status(500).send('数据库查询失败');
-    } else {
-      console.log('✅ 查询成功，数据：', results);
-      res.json(results); // 返回 JSON 格式的数据
-    }
-  });
-});
+// app.get('/persons', (req, res) => {
+//   const sql = 'SELECT * FROM person'; // 查询 person 表
+//   db.query(sql, (err, results) => {
+//     if (err) {
+//       console.error('❌ 查询失败:', err);
+//       res.status(500).send('数据库查询失败');
+//     } else {
+//       console.log('✅ 查询成功，数据：', results);
+//       res.json(results); // 返回 JSON 格式的数据
+//     }
+//   });
+// });
 
 app.listen(port, () => {
   console.log(`🚀 后端启动成功！请访问：http://localhost:${port}/hello`);
