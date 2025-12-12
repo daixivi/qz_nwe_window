@@ -1,15 +1,13 @@
 // back/db.js
+
 require('dotenv').config();
 
 const { Pool } = require('pg'); // PostgreSQL 驱动
 
-// 创建数据库连接池
+// 创建数据库连接池 —— 使用 DATABASE_URL（推荐）
 const pool = new Pool({
-  host: process.env.DB_HOST,     // ✅ 优先读环境变量，没有则用 localhost
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,     // PostgreSQL 默认 5432
+  connectionString: process.env.DATABASE_URL, // ✅ 使用 Render 提供的完整 Internal Database URL
+  ssl: { rejectUnauthorized: false } // 🔒 Render 的 PostgreSQL 有时需要关闭 SSL 验证
 });
 
 // 测试连接

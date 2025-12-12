@@ -1,0 +1,5 @@
+DB_HOST=dpg-d4tvma63jp1c73f6clkg-a
+DB_PORT=5432
+DB_NAME=qz_ren
+DB_USER=qz_ren_user
+DB_PASSWORD=KuZGIrm6sEmYZbygk0koE0efQEh2opvp
