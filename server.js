@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.port||3000;
+const port = process.env.PORT||3000;
 const pool = require('./mysql_lj/db'); // 修改为 PostgreSQL 连接池
 
 // 解决跨域问题
@@ -18,7 +18,7 @@ app.get('/hello', (req, res) => {
 // 健康检查接口
 app.get('/health', async (req, res) => {
   try {
-    const result = await pool.query('SELECT 1 AS ok');
+    const result = await pool.query('SELECT 1');
     res.status(200).json({
       status: 'ok',
       timestamp: new Date().toISOString(),
